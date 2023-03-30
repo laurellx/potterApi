@@ -8,9 +8,14 @@ import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import { useSelector } from "react-redux";
 import Books from "./pages/Books";
+import sound from "./assets/sounds/HarryPotterPrologue.mp3";
 
 function App() {
   const { user } = useSelector((state) => state.AuthReducer);
+
+  function play() {
+    return new Audio(sound).play();
+  }
 
   return (
     <div className="App">

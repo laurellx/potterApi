@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import broom from "../../src/assets/giphy.gif";
 
 export default function Home() {

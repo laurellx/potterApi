@@ -29,7 +29,7 @@ const CharactersComponent = () => {
         return (
           <div className="card flex" key={character.id}>
             <img
-              className="card-image__stamp card-image__stamp--card"
+              className="card-image__stamp card-image__stamp--multi"
               src={stamp}
             ></img>
             <Link to={`/characters/${character.id}`}>

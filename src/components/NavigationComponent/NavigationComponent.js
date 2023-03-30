@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logoHP from "../../assets/gold-logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { doLogout } from "../../store/auth/actions";
@@ -8,6 +8,7 @@ import { doLogout } from "../../store/auth/actions";
 const NavigationComponent = () => {
   const { user } = useSelector((state) => state.AuthReducer);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   function closeSession() {
     dispatch(doLogout());
@@ -19,7 +20,7 @@ const NavigationComponent = () => {
         <img src={logoHP} alt="logoHP" />
       </Link>
       <div className="navbar__nav">
-        <Link to="/">Home</Link>
+        {location.pathname === "/" ? "" : <Link to="/">Home</Link>}
         <Link to="/characters">Characters</Link>
         <Link to="/books">Books</Link>
         {user && user.id ? "" : <Link to="/login">Login</Link>}

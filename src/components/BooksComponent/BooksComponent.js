@@ -26,7 +26,7 @@ const BooksComponent = () => {
         return (
           <div className="card flex books">
             <img
-              className="card-image__stamp card-image__stamp--card"
+              className="card-image__stamp card-image__stamp--multi"
               src={stamp}
             ></img>
             <h1> {book.title} </h1>

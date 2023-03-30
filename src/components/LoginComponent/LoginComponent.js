@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { doLogin } from "../../store/auth/actions";
 import { Navigate } from "react-router";
+import stamp from "../../assets/stamp.png";
 
 const LoginComponent = () => {
   const { user } = useSelector((state) => state.AuthReducer);
@@ -19,8 +20,8 @@ const LoginComponent = () => {
     return <Navigate to="/profile" replace></Navigate>;
   }
   return (
-    <div className="wrapper wrapper--login flex">
-      <form className="singleCard">
+    <div className="wrapper--login flex">
+      <form>
         <fieldset className="flex">
           <label>Username</label>
           <input
@@ -38,9 +39,11 @@ const LoginComponent = () => {
           />
         </fieldset>
       </form>
-      <button className="btnLogin flex" onClick={onClickLogin}>
-        Login
-      </button>
+      <div className="flex">
+        <button className="btnLogin flex" onClick={onClickLogin}>
+          Login
+        </button>
+      </div>
     </div>
   );
 };

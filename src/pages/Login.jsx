@@ -3,7 +3,7 @@ import LoginComponent from "../components/LoginComponent/LoginComponent";
 
 export default function Login() {
   return (
-    <div className="wrapper">
+    <div>
       <LoginComponent></LoginComponent>
     </div>
   );
