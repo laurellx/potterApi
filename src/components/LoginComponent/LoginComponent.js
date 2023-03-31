@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { doLogin } from "../../store/auth/actions";
 import { Navigate } from "react-router";
-import stamp from "../../assets/stamp.png";
 
 const LoginComponent = () => {
   const { user } = useSelector((state) => state.AuthReducer);

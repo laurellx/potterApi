@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import loading from "../../assets/loading-hedwig.gif";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CharacterComponent = () => {
   const { character, loadingCharacter } = useSelector(
