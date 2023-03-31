@@ -4,6 +4,7 @@ import loading from "../../assets/loading-hedwig.gif";
 import { getBooks } from "../../store/books/actions";
 import { useDispatch, useSelector } from "react-redux";
 import stamp from "../../assets/stamp.png";
+import SimpleBar from "simplebar-react";
 
 const BooksComponent = () => {
   const dispatch = useDispatch();
@@ -21,22 +22,24 @@ const BooksComponent = () => {
     );
   }
   return (
-    <div className="wrapper flex">
-      {books.map((book) => {
-        return (
-          <div className="card flex books">
-            <img
-              className="card-image__stamp card-image__stamp--multi"
-              src={stamp}
-            ></img>
-            <h1> {book.title} </h1>
-            <h2>{book.author}</h2>
-            <h5>{book.description}</h5>
-            <h5>release date: {book.releaseDay}</h5>
-          </div>
-        );
-      })}
-    </div>
+    <SimpleBar style={{ maxHeight: 800 }}>
+      <div className="wrapper flex">
+        {books.map((book) => {
+          return (
+            <div className="card flex books">
+              <img
+                className="card-image__stamp card-image__stamp--multi"
+                src={stamp}
+              ></img>
+              <h1> {book.title} </h1>
+              <h2>{book.author}</h2>
+              <h5>{book.description}</h5>
+              <h5>release date: {book.releaseDay}</h5>
+            </div>
+          );
+        })}
+      </div>
+    </SimpleBar>
   );
 };
 

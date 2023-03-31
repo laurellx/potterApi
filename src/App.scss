@@ -5,6 +5,7 @@
   height: 100%;
   top: 0;
   left: 0;
+
 }
 
 .flex {
@@ -101,6 +102,7 @@ a {
       background-color: #e2cea8;
       border: none;
       padding: 0 3%;
+      border-radius: 5px;
     }
   }
 }
@@ -231,3 +233,6 @@ a {
   }
 }
 
+.simplebar-scrollbar {
+  background-color: goldenrod;
+}

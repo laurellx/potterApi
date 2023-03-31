@@ -15,7 +15,9 @@
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.2",
+    "resize-observer-polyfill": "^1.5.1",
     "sass": "^1.60.0",
+    "simplebar": "^6.2.4",
     "simplebar-react": "^3.2.3",
     "web-vitals": "^2.1.4"
   },

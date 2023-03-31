@@ -5,6 +5,8 @@ import { getCharacters } from "../../store/characters/actions";
 import loading from "../../assets/loading-hedwig.gif";
 import stamp from "../../assets/stamp.png";
 import { Link } from "react-router-dom";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.css";
 
 const CharactersComponent = () => {
   const dispatch = useDispatch();
@@ -24,22 +26,24 @@ const CharactersComponent = () => {
     );
   }
   return (
-    <div className="wrapper flex">
-      {characters.map((character) => {
-        return (
-          <div className="card flex" key={character.id}>
-            <img
-              className="card-image__stamp card-image__stamp--multi"
-              src={stamp}
-            ></img>
-            <Link to={`/characters/${character.id}`}>
-              <h2> {character.character} </h2>
-              <img className="card-image__photo" src={character.image} />
-            </Link>
-          </div>
-        );
-      })}
-    </div>
+    <SimpleBar style={{ maxHeight: 800 }} forceVisible="y" autoHide={false}>
+      <div className="wrapper flex">
+        {characters.map((character) => {
+          return (
+            <div className="card flex" key={character.id}>
+              <img
+                className="card-image__stamp card-image__stamp--multi"
+                src={stamp}
+              ></img>
+              <Link to={`/characters/${character.id}`}>
+                <h2> {character.character} </h2>
+                <img className="card-image__photo" src={character.image} />
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+    </SimpleBar>
   );
 };
 

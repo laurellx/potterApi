@@ -8,18 +8,18 @@ export default function Profile() {
       <div className="singleCard flex">
         <img className="card-image__photo--single" src={user.image} />
         <div className="card-content">
-          <h1>
+          <h2>
             <label>Name: </label>
             {user.firstName}
-          </h1>
-          <h1>
+          </h2>
+          <h2>
             <label>Surname: </label>
             {user.lastName}
-          </h1>
-          <h1>
+          </h2>
+          <h2>
             <label>Email: </label>
             {user.email}
-          </h1>
+          </h2>
         </div>
       </div>
     </div>
