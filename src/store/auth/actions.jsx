@@ -30,7 +30,6 @@ export function doLogin(userData) {
   return async (dispatch) => {
     try {
       dispatch(actionDoLogin(userData));
-      // we use axios.post because we are sending information instead of receiving it as we did for the other sections of the store
       const response = await axios.post(
         "https://dummyjson.com/auth/login",
         userData
