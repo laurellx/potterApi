@@ -15,11 +15,11 @@ const NavigationComponent = () => {
   }
 
   return (
-    <nav className="navbar">
+    <nav className="navbar flex">
       <Link className="logo" to="/">
         <img src={logoHP} alt="logoHP" />
       </Link>
-      <div className="navbar__nav">
+      <div className="navbar__nav flex">
         {location.pathname === "/" ? "" : <Link to="/">Home</Link>}
         <Link to="/characters">Characters</Link>
         <Link to="/books">Books</Link>

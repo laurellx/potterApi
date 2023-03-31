@@ -22,7 +22,7 @@ const BooksComponent = () => {
     );
   }
   return (
-    <SimpleBar style={{ maxHeight: 800 }}>
+    <SimpleBar style={{ maxHeight: 700 }}>
       <div className="wrapper flex">
         {books.map((book) => {
           return (

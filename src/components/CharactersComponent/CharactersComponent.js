@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { getCharacters } from "../../store/characters/actions";
@@ -10,6 +10,7 @@ import "simplebar/dist/simplebar.css";
 
 const CharactersComponent = () => {
   const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
   const { characters, loadingCharacters } = useSelector(
     (state) => state.CharactersReducer
   );
@@ -26,24 +27,47 @@ const CharactersComponent = () => {
     );
   }
   return (
-    <SimpleBar style={{ maxHeight: 800 }} forceVisible="y" autoHide={false}>
-      <div className="wrapper flex">
-        {characters.map((character) => {
-          return (
-            <div className="card flex" key={character.id}>
-              <img
-                className="card-image__stamp card-image__stamp--multi"
-                src={stamp}
-              ></img>
-              <Link to={`/characters/${character.id}`}>
-                <h2> {character.character} </h2>
-                <img className="card-image__photo" src={character.image} />
-              </Link>
-            </div>
-          );
-        })}
-      </div>
-    </SimpleBar>
+    <div>
+      <form className="searchForm">
+        <fieldset>
+          <label>Find character</label>
+          <input
+            type="search"
+            placeholder="search"
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </fieldset>
+      </form>
+      <SimpleBar style={{ maxHeight: 700 }} forceVisible="y" autoHide={false}>
+        <div className="wrapper flex">
+          {characters
+            .filter((character) => {
+              return search.toLowerCase() === ""
+                ? character
+                : character.character.toLowerCase().includes(search);
+            })
+            .map((character) => {
+              return (
+                <div className="card flex" key={character.id}>
+                  <img
+                    className="card-image__stamp card-image__stamp--multi"
+                    src={stamp}
+                    alt="stamp-logo"
+                  ></img>
+                  <Link to={`/characters/${character.id}`}>
+                    <img
+                      className="card-image__photo"
+                      src={character.image}
+                      alt={character.character}
+                    />
+                  </Link>
+                  <h2> {character.character} </h2>
+                </div>
+              );
+            })}
+        </div>
+      </SimpleBar>
+    </div>
   );
 };
 
