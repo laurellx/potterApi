@@ -6,7 +6,11 @@ export default function Profile() {
   return (
     <div className="wrapper--singleCard flex">
       <div className="singleCard flex">
-        <img className="card-image__photo--single" src={user.image} />
+        <img
+          className="card-image__photo--single"
+          src={user.image}
+          alt="card"
+        />
         <div className="card-content">
           <h2>
             <label>Name: </label>

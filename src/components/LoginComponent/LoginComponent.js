@@ -9,7 +9,6 @@ const LoginComponent = () => {
   const { user } = useSelector((state) => state.AuthReducer);
   const [username, setUsername] = useState("atuny0");
   const [password, setPassword] = useState("9uQFF1Lh");
-  // I need useDispatch for the input information to be dispatched to the store when clicking on the Login button
   const dispatch = useDispatch();
 
   function onClickLogin() {

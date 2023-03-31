@@ -7,7 +7,6 @@ import {
   GET_CHARACTER_FAIL,
 } from "./actionTypes";
 
-// I create an object variable which includes all the properties of the initial state before the API call is made
 const initialState = {
   characters: [],
   loadingCharacters: false,
@@ -18,8 +17,6 @@ const initialState = {
   },
 };
 
-// I create the reducer that is going to manage my storage depending on the switch case that is resulting from the API call.
-// Each case includes the property that is affected for each action, depending on the API call result being successful or not.
 export default function CharactersReducer(state = initialState, action) {
   switch (action.type) {
     case GET_CHARACTERS:

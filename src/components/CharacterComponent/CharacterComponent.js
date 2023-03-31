@@ -19,7 +19,11 @@ const CharacterComponent = () => {
   return (
     <div className="wrapper--singleCard flex">
       <div key={character.id} className="singleCard flex">
-        <img className="card-image__photo--single" src={character.image} />
+        <img
+          className="card-image__photo--single"
+          src={character.image}
+          alt={character.character}
+        />
         <div className="card-content">
           <h1>{character.character}</h1>
           <h2>{character.hogwartsHouse}</h2>

@@ -24,20 +24,19 @@ const BooksComponent = () => {
   return (
     <SimpleBar style={{ maxHeight: 700 }}>
       <div className="wrapper flex">
-        {books.map((book) => {
-          return (
-            <div className="card flex books">
-              <img
-                className="card-image__stamp card-image__stamp--multi"
-                src={stamp}
-              ></img>
-              <h1> {book.title} </h1>
-              <h2>{book.author}</h2>
-              <h5>{book.description}</h5>
-              <h5>release date: {book.releaseDay}</h5>
-            </div>
-          );
-        })}
+        {books.map((book) => (
+          <div className="card flex books">
+            <img
+              className="card-image__stamp card-image__stamp--multi"
+              src={stamp}
+              alt={book.title}
+            ></img>
+            <h1> {book.title} </h1>
+            <h2>{book.author}</h2>
+            <h5>{book.description}</h5>
+            <h5>release date: {book.releaseDay}</h5>
+          </div>
+        ))}
       </div>
     </SimpleBar>
   );

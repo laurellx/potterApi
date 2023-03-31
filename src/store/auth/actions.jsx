@@ -8,29 +8,24 @@ import {
   DO_LOGOUT_FAIL,
 } from "./actionTypes";
 
-// I send the login request to the backend
 export function actionDoLogin(loginData) {
   return {
     type: DO_LOGIN,
     payload: loginData,
   };
 }
-// successful response from backend = I obtain user details + unique token
 export function actionDoLoginOk(userDetails) {
   return {
     type: DO_LOGIN_OK,
     payload: userDetails,
   };
 }
-// unsuccessful response from backend = I obtain an error message
 export function actionDoLoginFail(error) {
   return {
     type: DO_LOGIN_FAIL,
     payload: error,
   };
 }
-
-// try-catch function which unifies all the above actions in order to send my request to backend
 export function doLogin(userData) {
   return async (dispatch) => {
     try {
@@ -63,8 +58,6 @@ export function actionDoLogoutFail(error) {
     payload: error,
   };
 }
-
-// try-catch function which unifies all the above actions in order to send my request to backend
 export function doLogout() {
   return async (dispatch) => {
     try {
