@@ -28,8 +28,8 @@ const CharactersComponent = () => {
   }
   return (
     <div>
-      <form className="searchForm">
-        <fieldset>
+      <form className="m-searchForm flex">
+        <fieldset className="flex">
           <label>Find character</label>
           <input
             type="search"
@@ -38,8 +38,8 @@ const CharactersComponent = () => {
           />
         </fieldset>
       </form>
-      <SimpleBar style={{ maxHeight: 700 }} forceVisible="y" autoHide={false}>
-        <div className="wrapper flex">
+      <SimpleBar style={{ maxHeight: 670 }} forceVisible="y" autoHide={false}>
+        <div className="mbody-container flex">
           {characters
             .filter((character) => {
               return search.toLowerCase() === ""
@@ -48,7 +48,7 @@ const CharactersComponent = () => {
             })
             .map((character) => {
               return (
-                <div className="card flex" key={character.id}>
+                <div className="m-card flex" key={character.id}>
                   <img
                     className="card-image__stamp card-image__stamp--multi"
                     src={stamp}

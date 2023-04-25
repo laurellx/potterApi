@@ -18,7 +18,7 @@ const LoginComponent = () => {
     return <Navigate to="/profile" replace></Navigate>;
   }
   return (
-    <div className="wrapper--login flex">
+    <div className="mbody-container mwrapper--login flex">
       <form>
         <fieldset className="flex">
           <label>Username</label>

@@ -17,21 +17,20 @@ const CharacterComponent = () => {
     );
   }
   return (
-    <div className="wrapper--singleCard flex">
-      <div key={character.id} className="singleCard flex">
+    <div className="mbody-container m-wrapper--singleCard flex">
+      <div key={character.id} className="m-singleCard flex">
         <img
-          className="card-image__photo--single"
+          className="mcard-image__photo--single flex"
           src={character.image}
           alt={character.character}
         />
-        <div className="card-content">
+        <div className="mcard-content">
           <h1>{character.character}</h1>
           <h2>{character.hogwartsHouse}</h2>
           <h3>Interpreted by:{character.interpretedBy}</h3>
           <h3>Children:{character.child}</h3>
         </div>
       </div>
-
       <Link to="/characters">
         <button className="btnBack">Go back</button>
       </Link>

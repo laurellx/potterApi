@@ -4,14 +4,14 @@ import { useSelector } from "react-redux";
 export default function Profile() {
   const { user } = useSelector((state) => state.AuthReducer);
   return (
-    <div className="wrapper--singleCard flex">
-      <div className="singleCard flex">
+    <div className="mbody-container m-wrapper--singleCard flex">
+      <div className="m-singleCard flex">
         <img
-          className="card-image__photo--single"
+          className="mcard-image__photo--single"
           src={user.image}
           alt="card"
         />
-        <div className="card-content">
+        <div className="mcard-content">
           <h2>
             <label>Name: </label>
             {user.firstName}
