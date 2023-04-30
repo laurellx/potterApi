@@ -39,7 +39,7 @@ const CharactersComponent = () => {
         </fieldset>
       </form>
       <SimpleBar style={{ maxHeight: 670 }} forceVisible="y" autoHide={false}>
-        <div className="mbody-container flex">
+        <div className="mbody-container cards-container flex">
           {characters
             .filter((character) => {
               return search.toLowerCase() === ""
