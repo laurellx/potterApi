@@ -313,7 +313,7 @@ a {
 
 
 
-@media screen and (min-width: 880px) {
+@media only screen and (min-width: 600px) {
   .loading-image {
     margin: 35% auto;
     width: 50%;
