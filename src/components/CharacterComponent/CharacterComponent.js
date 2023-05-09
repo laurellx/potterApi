@@ -12,19 +12,19 @@ const CharacterComponent = () => {
   if (loadingCharacter) {
     return (
       <div>
-        <img className="loading-image" src={loading} alt="Loading..." />
+        <img className="loading-image flex" src={loading} alt="Loading..." />
       </div>
     );
   }
   return (
-    <div className="mbody-container m-wrapper--singleCard flex">
-      <div key={character.id} className="m-singleCard flex">
+    <section className="content-container flex">
+      <div key={character.id} className="card--single flex">
         <img
-          className="mcard-image__photo--single flex"
+          className="card-image__photo--single flex"
           src={character.image}
           alt={character.character}
         />
-        <div className="mcard-content">
+        <div className="card-content">
           <h1>{character.character}</h1>
           <h2>{character.hogwartsHouse}</h2>
           <h3>Interpreted by:{character.interpretedBy}</h3>
@@ -32,9 +32,9 @@ const CharacterComponent = () => {
         </div>
       </div>
       <Link to="/characters">
-        <button className="btnBack">Go back</button>
+        <button className="button button--back">Go back</button>
       </Link>
-    </div>
+    </section>
   );
 };
 

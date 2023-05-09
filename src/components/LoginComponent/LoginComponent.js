@@ -18,7 +18,7 @@ const LoginComponent = () => {
     return <Navigate to="/profile" replace></Navigate>;
   }
   return (
-    <div className="mbody-container mwrapper--login flex">
+    <section className="content-container content-container--login flex">
       <form>
         <fieldset className="flex">
           <label>Username</label>
@@ -37,12 +37,10 @@ const LoginComponent = () => {
           />
         </fieldset>
       </form>
-      <div className="flex">
-        <button className="btnLogin flex" onClick={onClickLogin}>
-          Login
-        </button>
-      </div>
-    </div>
+      <button className="button button--login flex" onClick={onClickLogin}>
+        Login
+      </button>
+    </section>
   );
 };
 

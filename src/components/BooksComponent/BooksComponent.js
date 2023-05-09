@@ -17,15 +17,15 @@ const BooksComponent = () => {
   if (loadingBooks) {
     return (
       <div>
-        <img className="loading-image" src={loading} alt="Loading..." />
+        <img className="loading-image flex" src={loading} alt="Loading..." />
       </div>
     );
   }
   return (
-    <SimpleBar style={{ maxHeight: 800 }}>
-      <div className="mbody-container flex">
+    <SimpleBar style={{ maxHeight: 675 }}>
+      <section className="content-container flex">
         {books.map((book) => (
-          <div className="m-card flex m-books">
+          <div className="card flex">
             <img
               className="card-image__stamp card-image__stamp--multi"
               src={stamp}
@@ -37,7 +37,7 @@ const BooksComponent = () => {
             <h5>release date: {book.releaseDay}</h5>
           </div>
         ))}
-      </div>
+      </section>
     </SimpleBar>
   );
 };

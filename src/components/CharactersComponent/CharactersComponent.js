@@ -22,15 +22,15 @@ const CharactersComponent = () => {
   if (loadingCharacters) {
     return (
       <div>
-        <img className="loading-image" src={loading} alt="Loading..." />
+        <img className="loading-image flex" src={loading} alt="Loading..." />
       </div>
     );
   }
   return (
-    <div>
-      <form className="m-searchForm flex">
+    <section className="content-container">
+      <form className="searchForm flex">
         <fieldset className="flex">
-          <label>Find character</label>
+          <label>Character finder:</label>
           <input
             type="search"
             placeholder="search"
@@ -38,36 +38,34 @@ const CharactersComponent = () => {
           />
         </fieldset>
       </form>
-      <SimpleBar style={{ maxHeight: 670 }} forceVisible="y" autoHide={false}>
-        <div className="mbody-container cards-container flex">
-          {characters
-            .filter((character) => {
-              return search.toLowerCase() === ""
-                ? character
-                : character.character.toLowerCase().includes(search);
-            })
-            .map((character) => {
-              return (
-                <div className="m-card flex" key={character.id}>
+      <SimpleBar style={{ maxHeight: 510 }} forceVisible="y">
+        {characters
+          .filter((character) => {
+            return search.toLowerCase() === ""
+              ? character
+              : character.character.toLowerCase().includes(search);
+          })
+          .map((character) => {
+            return (
+              <div className="card flex" key={character.id}>
+                <img
+                  className="card-image__stamp card-image__stamp--multi"
+                  src={stamp}
+                  alt="stamp-logo"
+                ></img>
+                <Link to={`/characters/${character.id}`}>
                   <img
-                    className="card-image__stamp card-image__stamp--multi"
-                    src={stamp}
-                    alt="stamp-logo"
-                  ></img>
-                  <Link to={`/characters/${character.id}`}>
-                    <img
-                      className="card-image__photo"
-                      src={character.image}
-                      alt={character.character}
-                    />
-                  </Link>
-                  <h2> {character.character} </h2>
-                </div>
-              );
-            })}
-        </div>
+                    className="card-image__photo"
+                    src={character.image}
+                    alt={character.character}
+                  />
+                </Link>
+                <h2> {character.character} </h2>
+              </div>
+            );
+          })}
       </SimpleBar>
-    </div>
+    </section>
   );
 };
 

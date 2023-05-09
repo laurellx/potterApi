@@ -15,11 +15,11 @@ const NavigationComponent = () => {
   }
 
   return (
-    <nav className="m-navbar flex">
-      <Link className="m-logo" to="/">
+    <section className="header flex">
+      <Link className="header-logo" to="/">
         <img src={logoHP} alt="logoHP" />
       </Link>
-      <div className="m-navbar__nav flex">
+      <nav className="header__nav flex">
         {location.pathname === "/" ? "" : <Link to="/">Home</Link>}
         <Link to="/characters">Characters</Link>
         <Link to="/books">Books</Link>
@@ -32,8 +32,8 @@ const NavigationComponent = () => {
         ) : (
           ""
         )}
-      </div>
-    </nav>
+      </nav>
+    </section>
   );
 };
 

@@ -1,7 +1,7 @@
 .App {
   font-family: 'Playfair Display', serif;
-  height: 100%;
-  max-width: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
   overflow-y: hidden;
   top: 0;
@@ -12,14 +12,7 @@
   display: flex;
 }
 
-a {
-  color: #320513;
-  font-family: 'Playfair Display', serif;
-  text-decoration: none;
-}
-
 .loading-image {
-  display: flex;
   align-self: center;
   justify-self: center;
   margin: 50% auto;
@@ -27,63 +20,71 @@ a {
   height: auto;
 }
 
-.mbody-container {
-    text-align: center;
-    margin: 5% auto;
-    border-radius: 3px;
-    padding: 0 12px;
-    height: 820px;
-    width: 420px;
-    flex-direction: column;
-    .broom-gif {
-      width: 200px;
-      align-self: center;
-    }
-}
-
 .simplebar-scrollbar {
   background-color: goldenrod;
 }
 
+.button {
+  font-family: 'Harry Potter', sans-serif;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  margin: 0 auto;
+  color: goldenrod;
+  box-shadow: 1px 2px black;
+&:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+}
+
+.content-container {
+  text-align: center;
+  align-items: center;
+  border-radius: 3px;
+  flex-direction: column;
+  height: 100%;
+  padding: 15% 2% 1% 2%;
+}
+
 
 // Home
-
-.m-home__intro--title {
-  font-size: 40px;
+.home__intro--title {
+  font-size: 250%;
   color: goldenrod;
   font-family: 'Harry Potter', sans-serif;
-  margin: 15% auto;
 }
-.m-home__intro--subtitle {
-  font-size: 18px;
+.home__intro--subtitle {
+  font-size: 15px;
   color: goldenrod;
   font-family: 'Playfair Display', serif;
+}
+.broom-gif {
+  width: 200px;
+  align-self: center;
 }
 
 
 // Navigation
-
-.m-navbar {
+.header {
   justify-content: space-between;
   flex-direction: column;
-  width: 20%;
   align-items: center;
-  height: 170px;
-  width: 420px;
   text-align: center;
   align-items: center;
   justify-content: center;
   margin: 3% auto;
   border-radius: 3px;
-  padding: 0 12px;
+  padding: 0 20px;
  }
- .m-logo {
+ .header-logo {
   img {
-    width: 280px;
+    width: 250px;
     height: auto;
+
   }
  }
-.m-navbar__nav {
+.header__nav {
   width: 100%;
   align-items: center;
   justify-content: space-between;
@@ -92,10 +93,8 @@ a {
     padding: 5px;
     border: 1px solid transparent;
     border-radius: 5px;
-    font-size: 23px;
+    font-size: 18px;
     box-shadow: 1px 2px black;
-    font-family: 'Harry Potter', sans-serif;
-    justify-content: space-around;
     &:hover {      
       transform: scale(1.2);
     }
@@ -106,10 +105,93 @@ a {
   }
 }
 
+// Login
+.content-container--login {
+  form {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 3%;
+  fieldset {
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    width: 100%;
+  }
+  label {
+    color: goldenrod;
+    margin-top: 10%;
+    font-family: 'Harry Potter', sans-serif;
+    font-size: 150%;
+    }
+   input {
+    font-family: 'Playfair Display', serif;
+    margin: 10% auto;
+    font-size: 70%;
+    height: 25px;
+    width: 100%;
+    background-color: #e2cea8;
+    border: none;
+    border-radius: 5px;
+    padding: 0 1%;
+   }
+  }
+  .button--login {
+    font-size: 20px;
+    padding: 5px;
+   }
+  }
+    
+
+
+// Cards
+.card-content {
+  width: 100%;
+  flex-direction: column;
+  h2, h3 {
+    font-size: smaller;
+  }
+}
+// multi (characters & books)
+.card {
+  position: relative;
+  flex: 0 1 20%;
+  border-radius: 1%;
+  margin: 15%;
+  padding: 3%;
+  flex-direction: column;
+  background-color: #e2cea8;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.card-image__stamp--multi {
+  margin-bottom: 8%;
+  position: relative;
+  width: 30%;
+  align-self: center;
+  margin-top: -10%;
+}
+// single 
+.card--single {
+  flex-direction: column;
+  flex-wrap: wrap;
+  border-radius: 1%;
+  width: 50%;
+  height: auto;
+  padding: 3%;
+  background-color: #e2cea8;
+  margin-bottom: 2%;
+}
+.card-image__photo--single {
+  width: 100%;
+  height: auto;
+  box-shadow: 1px 4px 2px goldenrod(0, 0, 0, 0.2);
+}
+
+
 
 // Characters
-
-.m-searchForm {
+.searchForm {
   text-align: center;
   align-items: center;
   fieldset {
@@ -123,13 +205,13 @@ a {
     color: goldenrod;
     margin-top: 5%;
     font-family: 'Harry Potter', sans-serif;
-    font-size: 150%;
+    font-size: 120%;
     }
    input {
     font-family: 'Playfair Display', serif;
     font-size: 70%;
-    height: 25px;
-    width: 55%;
+    height: 20px;
+    width: 50%;
     background-color: #e2cea8;
     border: none;
     border-radius: 5px;
@@ -139,308 +221,3 @@ a {
 }
 
 
-// Detail
-
-.m-wrapper--singleCard {
-  color: #320513;
-  text-align: center;
-  justify-content: center;
-  }
-
-
-  // Cards single / multi views
-
-.m-card {
-  position: relative;
-  flex: 0 1 20%;
-  border-radius: 1%;
-  margin: 10%;
-  flex-direction: column;
-  background-color: #e2cea8;
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-.mcard-content {
-  width: 100%;
-  flex-direction: column;  
-}
-.m-singleCard {
-  flex-direction: column;
-  flex-wrap: wrap;
-  border-radius: 1%;
-  width: 60%;
-  height: auto;
-  margin: 5% auto;
-  padding: 3%;
-  background-color: #e2cea8;
-
-}
-.card-image__photo {
-  width: 250px;
-  height: 350px;
-  object-fit: cover;
-  object-position: center;
-  overflow: hidden;
-  box-shadow: 1px 4px 2px goldenrod(0, 0, 0, 0.2);
-}
-.mcard-image__photo--single {
-  width: 100%;
-  height: auto;
-  box-shadow: 1px 4px 2px goldenrod(0, 0, 0, 0.2);
-}
-.card-image__stamp--multi {
-  margin-bottom: 8%;
-  position: relative;
-  width: 30%;
-  align-self: center;
-  margin-top: -10%;
-}
-.m-books {
-  padding: 5%;
-}
-
-
-
-  // Login
-
-  .mwrapper--login {
-    form { 
-      margin: 30% auto;
-      text-align: center;
-      align-items: center;
-    fieldset {
-      flex-direction: column;
-      padding: 0;
-      border: none;
-      width: 100%;
-    }
-    label {
-      color: goldenrod;
-      margin-top: 10%;
-      font-family: 'Harry Potter', sans-serif;
-      font-size: 150%;
-      }
-     input {
-      font-family: 'Playfair Display', serif;
-      margin: 1% auto;
-      font-size: 70%;
-      height: 25px;
-      width: 100%;
-      background-color: #e2cea8;
-      border: none;
-      border-radius: 5px;
-      padding: 0 1%;
-     }
-    }
-    }
-  
-
-
-// Buttons
-
-.btnLogin {
-  font-family: 'Harry Potter', sans-serif;
-  font-size: 200%;
-  border: none;
-  background-color: transparent;
-  margin: 0 auto;
-  color: goldenrod;
-  width: min-content;
-  padding: 5px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    font-size: 23px;
-    box-shadow: 1px 2px black;
-  &:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-  }
-
- }
-
-
-.btnBack {
-  font-family: 'Harry Potter', sans-serif;
-  font-size: 150%;
-  background-color: transparent;
-  margin: 0 auto;
-  color: goldenrod;
-  padding: 5px;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    box-shadow: 1px 2px black;
-  &:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-  }
-}
-
-
-
-
-// .wrapper {
-//   text-align: center;
-//   flex-wrap: wrap;
-//   width: 80vw;
-//   height: 70vh;
-//   justify-items: center;
-//   justify-content: space-evenly;
-//   margin: 1% auto;
-//   border-radius: 3px;
-//   padding: 0 12px;
-// }
-
-
-
-
-// .wrapper--singleCard {
-//   color:#320513;
-//   flex-direction: column;
-//   text-align: center;
-//   align-content: center;
-//   justify-content: center;
-//   width: 100%;
-//   height: auto;
-//   margin: 2% auto;
-//   }
-
-  
-
-
-
-  
-
-
-
-@media only screen and (min-width: 600px) {
-  .loading-image {
-    margin: 35% auto;
-    width: 50%;
-  }
-  .mbody-container {
-    height: 900px;
-    width: 1000px;
-    .broom-gif {
-      width: 400px;
-    }
-}
-.m-home__intro--title {
-  font-size: 70px;
-  margin: 5% auto;
-}
-.m-home__intro--subtitle {
-  font-size: 25px;
-  padding: 0 15%;
-}
-.m-navbar {
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-  height: 10%;
-  text-align: center;
-  margin: 1% auto;
- }
-.m-navbar__nav {
-  width: 70%;
-  justify-content: space-around;
-}
-.mwrapper--login {
-  form { 
-    width: 50%;
-    margin: 20% auto;
-  fieldset {
-    width: 100%;
-  }
-  label {
-    font-size: 180%;
-    }
-   input {
-    height: 30px;
-   }
-  }
-  }
-  .m-searchForm {
-    fieldset {
-    label {
-      font-size: 200%;
-      }
-     input {
-      height: 30px;
-      width: 50%;
-      border: none;
-    }
-    }
-  }
-  .cards-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .m-card {
-    flex: 0 0 30%;
-    min-width: auto;
-    height: auto;
-    border-radius: 1%;
-    flex-direction: column;
-    background-color: #e2cea8;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-  .mcard-content {
-    width: 100%;
-    flex-direction: column;  
-  }
-  .m-singleCard {
-    flex-direction: column;
-    flex-wrap: wrap;
-    border-radius: 1%;
-    text-align: center;
-    width: 30%;
-    height: auto;
-    margin: 5% auto;
-    padding: 3%;
-    background-color: #e2cea8;
-  }
-  .card-image__photo {
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    overflow: hidden;
-    box-shadow: 1px 4px 2px goldenrod(0, 0, 0, 0.2);
-  }
-  .mcard-image__photo--single {
-    width: 100%;
-    height: auto;
-  }
-  .card-image__stamp--multi {
-    margin-bottom: 8%;
-    position: relative;
-    width: 30%;
-    align-self: center;
-    margin-top: -10%;
-  }
-  .m-books {
-    padding: 5%;
-  }
-  
-
-}
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-  /* CSS */
-  
-}
-
-/* 
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-*/
