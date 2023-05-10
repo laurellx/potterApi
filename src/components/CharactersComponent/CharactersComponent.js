@@ -43,7 +43,9 @@ const CharactersComponent = () => {
           .filter((character) => {
             return search.toLowerCase() === ""
               ? character
-              : character.character.toLowerCase().includes(search);
+              : character.character
+                  .toLowerCase()
+                  .includes(search.toLowerCase());
           })
           .map((character) => {
             return (
