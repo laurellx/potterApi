@@ -492,12 +492,14 @@
   }
 .searchForm {
     fieldset {
+      margin: 1%;
     label {
-      font-size: 200%;
+      margin-top: 0;
+      font-size: 150%;
       }
      input {
       height: 30px;
-      width: 50%;
+      width: 30%;
       border: none;
     }
     }
