@@ -38,7 +38,7 @@ const CharactersComponent = () => {
           />
         </fieldset>
       </form>
-      <SimpleBar style={{ maxHeight: 510 }} forceVisible="y">
+      <section className="content-container--characters flex">
         {characters
           .filter((character) => {
             return search.toLowerCase() === ""
@@ -66,7 +66,7 @@ const CharactersComponent = () => {
               </div>
             );
           })}
-      </SimpleBar>
+      </section>
     </section>
   );
 };

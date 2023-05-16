@@ -3,8 +3,6 @@
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  overflow-y: hidden;
-  top: 0;
   left: 0;
 }
 
@@ -18,10 +16,6 @@
   margin: 50% auto;
   width: 80%;
   height: auto;
-}
-
-.simplebar-scrollbar {
-  background-color: goldenrod;
 }
 
 .button {
@@ -39,22 +33,22 @@
 }
 
 .content-container {
+  overflow: hidden;
   text-align: center;
   align-items: center;
   border-radius: 3px;
   flex-direction: column;
-  height: 100%;
-  padding: 15% 2% 1% 2%;
 }
-
 
 // Home
 .home__intro--title {
+  margin: 10% 2%;
   font-size: 250%;
   color: goldenrod;
   font-family: 'Harry Potter', sans-serif;
 }
 .home__intro--subtitle {
+  margin: 5% 2%;
   font-size: 15px;
   color: goldenrod;
   font-family: 'Playfair Display', serif;
@@ -67,21 +61,21 @@
 
 // Navigation
 .header {
+  height: 20%;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
   text-align: center;
   align-items: center;
   justify-content: center;
-  margin: 3% auto;
   border-radius: 3px;
   padding: 0 20px;
+  margin: 3% auto;
  }
  .header-logo {
   img {
     width: 250px;
     height: auto;
-
   }
  }
 .header__nav {
@@ -152,9 +146,19 @@
   }
 }
 // multi (characters & books)
+.content-container--characters {
+  flex-direction: column;
+  overflow-y: auto;
+  justify-content: center;
+  }
+  .content-container--books {
+    flex-direction: column;
+    overflow-y: scroll;
+    justify-content: center;
+    }
 .card {
   position: relative;
-  flex: 0 1 20%;
+  flex: 0 0 30%;
   border-radius: 1%;
   margin: 15%;
   padding: 3%;
@@ -177,7 +181,7 @@
   position: relative;
   width: 30%;
   align-self: center;
-  margin-top: -10%;
+  margin-top: -13%;
 }
 // single 
 .card--single {
@@ -235,35 +239,37 @@
     margin: 35% auto;
     width: 50%;
   }
-  .content-container {
-    height: 900px;
-    width: 1000px;
-    .broom-gif {
-      width: 400px;
-    }
-}
+
 .home__intro--title {
-  font-size: 70px;
-  margin: 5% auto;
+  font-size: 700%;
+  margin: 15% 4%;
 }
 .home__intro--subtitle {
-  font-size: 25px;
+  font-size: 30px;
+  margin: 0 4%;
+
 }
 .broom-gif {
-  width: 250px;
-  align-self: center;
+  width: 380px;
+}
+.header-logo {
+  img {
+    width: 350px;
+    height: auto;
+  }
 }
 .header {
-  justify-content: space-between;
   flex-direction: row;
   width: 100%;
   height: 10%;
-  text-align: center;
-  margin: 1% auto;
+  margin: 2% auto;
  }
 .header__nav {
   width: 70%;
   justify-content: space-around;
+  a:not(.logo) {
+    font-size: 23px;
+  }
 }
 .content-container--login {
   form { 
@@ -280,27 +286,39 @@
    }
   }
   }
+  .content-container--characters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-between;
+    }
+  .content-container--books {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-around;
+  }
   .card-content {
     width: 100%;
     flex-direction: column;  
   }
 .card {
-    flex: 0 0 30%;
-    min-width: auto;
-    height: auto;
+  flex: 0 0 40%;
+  margin: 5%;
+    height: min-content;
     border-radius: 1%;
     flex-direction: column;
     background-color: #e2cea8;
+    justify-content: space-around;
     &:hover {
       transform: scale(1.1);
     }
   }
   .card-image__stamp--multi {
-    margin-bottom: 8%;
     position: relative;
-    width: 30%;
+    width: 40%;
     align-self: center;
-    margin-top: -10%;
+    margin-top: -21%;
   }
   .card--single{
     flex-direction: column;
@@ -314,8 +332,8 @@
     background-color: #e2cea8;
   }
   .card-image__photo {
-    width: 200px;
-    height: auto;
+    width: 230px;
+    height: 300px;
     object-fit: cover;
     object-position: center;
     overflow: hidden;
@@ -324,6 +342,9 @@
   .card-image__photo--single {
     width: 100%;
     height: auto;
+  }
+  .card--books {
+    height: 550px;
   }
 .searchForm {
     fieldset {
@@ -337,4 +358,149 @@
     }
     }
   }
+}
+
+@media only screen and (min-width: 992px) {
+  .loading-image {
+    margin: 20% auto;
+    width: 40%;
+  }
+
+.home__intro--title {
+  font-size: 500%;
+  margin: 10% 4%;
+}
+.home__intro--subtitle {
+  font-size: 20px;
+  margin: 0 4%;
+
+}
+.broom-gif {
+  width: 400px;
+}
+.header-logo {
+  img {
+    width: 400px;
+    height: auto;
+  }
+}
+.header {
+  flex-direction: row;
+  width: 100%;
+  height: 13%;
+  margin: 1% auto;
+ }
+.header__nav {
+  width: 70%;
+  justify-content: space-around;
+  a:not(.logo) {
+    font-size: 25px;
+  }
+}
+.content-container--login {
+  form {
+    width: 50%;
+    margin: 1% auto;
+  fieldset {
+    width: 100%;
+  }
+  label {
+    margin-top: 5%;
+    font-size: 200%;
+    }
+   input {
+    margin: 3% auto;
+    font-size: 70%;
+    height: 30px;
+    width: 70%;  
+   }
+  }
+  .button--login {
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 5%;
+   }
+  }
+  .content-container--characters {
+    height: min-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    }
+  .content-container--books {
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: space-around;
+    padding: 5%;
+  }
+  .card-content {
+    width: 100%;
+    flex-direction: column;
+  }
+.card {
+  flex: 0 0 20%;
+  margin: 5%;
+    height: max-content;
+    border-radius: 1%;
+    flex-direction: column;
+    background-color: #e2cea8;
+    justify-content: space-around;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .card-image__stamp--multi {
+    position: relative;
+    width: 45%;
+    align-self: center;
+    margin-top: -35%;
+  }
+  .card--single{
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 1%;
+    text-align: center;
+    width: 15%;
+    height: auto;
+    margin: 3% auto;
+    padding: 2%;
+    background-color: #e2cea8;
+  }
+  .card-image__photo {
+    width: 230px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    box-shadow: 1px 4px 2px goldenrod(0, 0, 0, 0.2);
+  }
+  .card-image__photo--single {
+    width: 100%;
+    height: auto;
+  }
+  .card--books {
+    margin-top: 5%;
+    height: 750px;
+    flex: 0 0 25%;
+  }
+  .button--back {
+    font-size: 30px;
+    padding: 5px;
+    margin-top: 5%;
+  }
+.searchForm {
+    fieldset {
+    label {
+      font-size: 200%;
+      }
+     input {
+      height: 30px;
+      width: 50%;
+      border: none;
+    }
+    }
+  }
+
 }

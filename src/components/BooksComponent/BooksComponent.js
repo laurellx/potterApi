@@ -22,10 +22,10 @@ const BooksComponent = () => {
     );
   }
   return (
-    <SimpleBar style={{ maxHeight: 675 }}>
-      <section className="content-container flex">
+    <section className="content-container flex">
+      <section className="content-container--books flex">
         {books.map((book) => (
-          <div className="card flex">
+          <div className="card card--books flex">
             <img
               className="card-image__stamp card-image__stamp--multi"
               src={stamp}
@@ -38,7 +38,7 @@ const BooksComponent = () => {
           </div>
         ))}
       </section>
-    </SimpleBar>
+    </section>
   );
 };
 
