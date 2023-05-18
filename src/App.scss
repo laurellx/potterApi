@@ -440,20 +440,24 @@
     flex-direction: column;
   }
 .card {
-  flex: 0 0 20%;
-  margin: 5%;
+  flex: 0 0 15%;
+  margin: 3%;
     height: max-content;
     border-radius: 1%;
     flex-direction: column;
     background-color: #e2cea8;
     justify-content: space-around;
+    padding: 3% 1%;
     &:hover {
       transform: scale(1.1);
+    }
+    h2 {
+      font-size: 20px;
     }
   }
   .card-image__stamp--multi {
     position: relative;
-    width: 45%;
+    width: 40%;
     align-self: center;
     margin-top: -35%;
   }
@@ -469,8 +473,8 @@
     background-color: #e2cea8;
   }
   .card-image__photo {
-    width: 230px;
-    height: 300px;
+    width: 180px;
+    height: 200px;
     object-fit: cover;
     object-position: center;
     overflow: hidden;
